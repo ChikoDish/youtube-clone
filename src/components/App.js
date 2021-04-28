@@ -12,6 +12,7 @@ function App() {
     const response = await youtube.get("/search", {
       params: {
         q: searchText,
+        //  channelId: "UC8butISFwT-Wl7EV0hUK0BQ",
       },
     });
     console.log(response);
