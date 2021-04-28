@@ -8,13 +8,13 @@ function App() {
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState(null);
 
-  const handleSubmit = async (termFromSearchBar) => {
+  const handleSubmit = async (searchText) => {
     const response = await youtube.get("/search", {
       params: {
-        q: termFromSearchBar,
+        q: searchText,
       },
     });
-
+    console.log(response);
     setVideos(response.data.items);
   };
   const handleVideoSelect = (video) => {
